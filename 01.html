@@ -1,4 +1,10 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+<body>
     <script>
       //对象的结构赋值
         var { name,age,id } = {id: 4, name: "conan",age: 28 }
@@ -33,4 +39,39 @@
         console.log( fun({x: 100}) ) // 100 undefined
         console.log(fun());//0 0
         console.log(fun({}));
+        //数值交换
+        var x = 100;
+        var y = 200;
+        console.log("交换前","x:",x,"y:",y);
+        [x,y] = [y,x]//好处方便
+        console.log("交换后","x:",x,"y:",y);
+        //作用块
+        {
+            function fn () {
+                return [1,2,3]
+            }
+            var {x,y,z} = fn()
+            console.log(x);
+            //对象赋值
+            function conna(){
+                return {
+                    id: '123',
+                    name: 'liu',
+                    address: '深圳'
+                }
+            }
+            var {id,name,address} = conna();
+            console.log(address);
+        }
+        //提取json数据的方法
+        var json = {
+            id: 1,
+            name: 'xin',
+            msg: {
+                code: '12'
+            }
+        }
+
     </script>
+</body>
+</html>
